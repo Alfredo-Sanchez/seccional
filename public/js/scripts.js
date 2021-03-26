@@ -7,7 +7,8 @@ const socioStatus = document.getElementById('status')
 form.addEventListener('submit', (e)=>{
     e.preventDefault()
     // console.log(e.target.ci.value)
-    let ci = e.target.ci.value;
+    let cedula = e.target.ci.value;
+      let ci =  cedula.replace(/\s+|\-|\./g, '')
     fetch(`http://192.168.1.19:3000/socio/${ci}`)
     .then(res => res.ok ? res.json() : console.log(`error`))
     .then(data =>{
