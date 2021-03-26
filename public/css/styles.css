@@ -1,0 +1,141 @@
+
+:root{
+    --bg-color: #eee;
+    --font-family: 'Inter', sans-serif;
+}
+*,*::before, *::after{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    background-color:var(--bg-color);
+    font-family: var(--font-family);
+}
+
+/* header stars */
+.header{
+    width: 100%;
+    background-color: #fff;
+    height: 60px;
+    position: sticky;
+    top: 0;
+}
+
+.header__content{
+    height: 60px;
+}
+.header__img{
+    margin-left: -10px;
+    width: 50%;
+    height: 60px;
+}
+
+/* main start */
+.title{
+    margin-top: 2em;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.form{
+    /* border: 1px solid red; */
+    width: 360px;
+    height: 220px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px #83a6d288;
+    margin-bottom: 30px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.form__input{
+    outline: none;
+    border: 1px solid rgb(202, 201, 201);
+    border-radius: 0.25rem;
+    width: 100%;
+    padding: 9px;
+    margin-top: 1.5em;
+    margin-bottom: 1.7em;
+    padding-left: 0.35em;
+}
+
+.form__span{
+    font-size: 10px;
+}
+
+.form__submit{
+    width: 135px;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    border-radius: 0.25rem;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 9px;
+    background-color: green;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.information{
+    background-color: var(--bg-color);
+    width: 360px;
+    height: 235px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow:  0 10px 30px #83a6d288;
+    margin-bottom: 30px;
+}
+
+
+
+.information__text--center{
+    margin-top: 30px;
+    text-align: center;
+}
+
+@media screen and (min-width: 768px){
+    
+    .header{
+        height: 65px;
+    }
+    .header__content{
+        border: 3px solid green;
+        height: 65px;
+        width: 100px;
+    }
+
+    .header__img{
+        max-width: 20%;
+        height: 65px;
+        margin-left: 0;
+    }
+
+    .main{
+        max-width: 1000px;
+        margin-top: 3em;
+        margin-right: auto;
+        margin-left: auto;
+        display: grid;
+        grid-template-columns: repeat (2, 1fr);
+    }
+    .form{
+        grid-column: 1 / 2;
+        height: 235px;
+    }
+
+    .information{
+        grid-column: 2 / 3;
+    }
+
+    .title{
+        font-size: 2em;
+    }
+}

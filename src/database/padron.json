@@ -1,0 +1,37 @@
+[
+
+    {
+        "socio": 1101,
+        "cedula": 4690107,
+        "nombre": "ABEGG OVELAR, DELIA TAMARA",
+        "habilitado": "si"
+    },
+    {
+        "69": [
+            {
+                
+                "cedula": 1680862,
+                "nombre": "ACOSTA DIAZ,RAMON FERNANDO",
+                "habilitado": "si"
+            }
+        ]
+    },
+    {
+        "socio": 11,
+        "cedula": 760944,
+        "nombre": "BALBUENA, CARLOS NARCISO",
+        "habilitado": "si"
+    },
+    {
+        "socio": 744,
+        "cedula": 835061,
+        "nombre": "CABRAL DE RODAS, LUCIA",
+        "habilitado": "si"
+    },
+    {
+        "socio": 10,
+        "cedula": 1131368,
+        "nombre": "CELAURO DE CARDOZO, GRACIELA ESTHER",
+        "habilitado": "si"
+    }
+]
