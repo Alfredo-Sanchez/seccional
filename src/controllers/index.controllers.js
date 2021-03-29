@@ -27,7 +27,7 @@ controller.getSocio = async (req, res)=>{
           res. send(response.rows)
       }else {
         // res.json({message: `No existe la cedula ${id} en este padrón. `})
-        res.status(403).send({error: `Socio con cedula ${id} no encontrado`})
+        res.status(404).send({error: `Socio con cedula ${id} no encontrado`})
       } 
   } catch (error) {
       console.log(error)
