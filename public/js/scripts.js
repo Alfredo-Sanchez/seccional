@@ -1,36 +1,43 @@
 const form = document.getElementById('form')
 const socioName = document.getElementById('name')
 const socioNumber = document.getElementById('socio-number')
-const socioStatus = document.getElementById('status')
+const socioAddress = document.getElementById('address')
+const socioSectional = document.getElementById('sectional')
+const pollingPlace = document.getElementById('polling-place')
 
-const limpiarCampos = ()=>{
+const limpiarCampos = () => {
     socioName.innerHTML = `<b>Nombre:</b> Socio no encontrado`;
-    socioNumber.innerHTML = `<b>Socio N.°:</b>`;
-    socioStatus.innerHTML = `<b>Estado:</b>`;
+    socioNumber.innerHTML = `<b>C.I N.°:</b>`;
+    socioAddress.innerHTML = `<b>Dirección:</b>`;
+    socioSectional.innerHTML = `<b>Seccional:</b>`;
+    pollingPlace.innerHTML = `<b>Lugar de votación:</b>`;
 }
 
-form.addEventListener('submit', (e)=>{
+form.addEventListener('submit', (e) => {
     e.preventDefault()
     let cedula = e.target.ci.value;
-      let ci =  cedula.replace(/\s+|\-|\./g, '')
-    fetch(`http://www.cofudep.coop.py:3000/socio/${ci}`)
-    // .then(res => res.ok ? res.json() : limpiarCampos() )
-    .then(res =>{
-        if(res.ok){
-            return res.json()
-        }else if(res.status == 404){
-            limpiarCampos();
-            throw `No existe el socio con la cédula ${ci}`
-        }
-    })
-    .then(data =>{
-        const socio = data
-        socioName.innerHTML = `<b>Nombre:</b> ${socio[0].socio_nombre}`;
-        socioNumber.innerHTML = `<b>Socio N.°:</b> ${socio[0].socio_nro}`;
-        socioStatus.innerHTML = `<b>Estado:</b> ${socio[0].socio_estado}`;
-    })
-    .catch(e => {
-       return console.log(e)
-    })
+    let ci = cedula.replace(/\s+|\-|\./g, '')
+
+    fetch(`http://localhost:3000/socio/${ci}`)
+        // .then(res => res.ok ? res.json() : limpiarCampos() )
+        .then(res => {
+            if (res.ok) {
+                return res.json()
+            } else if (res.status == 404) {
+                limpiarCampos();
+                throw `No existe el socio con la cédula ${ci}`
+            }
+        })
+        .then(data => {
+            const socio = data
+            socioName.innerHTML = `<b>Nombre:</b> ${socio[0].pad_nom}`;
+            socioNumber.innerHTML = `<b>C.I N.°:</b> ${socio[0].pad_ci}`;
+            socioAddress.innerHTML = `<b>Dirección:</b> ${socio[0].pad_dir}`;
+            socioSectional.innerHTML = `<b>Seccional:</b> ${socio[0].pad_sec}`;
+            pollingPlace.innerHTML = `<b>Lugar de votación:</b> ${socio[0].pad_lug}`;
+        })
+        .catch(e => {
+            return console.log(e)
+        })
     e.target.ci.value = ""
 })
