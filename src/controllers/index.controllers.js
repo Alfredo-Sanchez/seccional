@@ -12,7 +12,7 @@ controller.index = (req, res) => {
 controller.socios = async (req, res) => {
     try {
         const response = await pool.query('SELECT * FROM public.padron');
-
+        console.log(response)
         res.send(response)
 
     } catch (error) {
