@@ -18,7 +18,7 @@ form.addEventListener('submit', (e) => {
     let cedula = e.target.ci.value;
     let ci = cedula.replace(/\s+|\-|\./g, '')
 
-    fetch(`http://localhost:3000/socio/${ci}`)
+    fetch(`https://seccional-production.up.railway.app/socio/${ci}`)
         // .then(res => res.ok ? res.json() : limpiarCampos() )
         .then(res => {
             if (res.ok) {
