@@ -11,5 +11,5 @@ app.use(require('./routes/index.routers'))
 //static files
 app.use(express.static(path.join(__dirname, '../public')))
 
-app.listen(3000)
-console.log(`server on port 3000`)
+app.listen(process.env.PORT || 3000)
+console.log(`server on port ${process.env.PORT}`)
