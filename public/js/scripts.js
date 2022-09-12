@@ -25,7 +25,7 @@ form.addEventListener('submit', (e) => {
                 return res.json()
             } else if (res.status == 404) {
                 limpiarCampos();
-                throw `No existe el socio con la cédula ${ci}`
+                throw `No existe el persona con la cédula ${ci}`
             }
         })
         .then(data => {
