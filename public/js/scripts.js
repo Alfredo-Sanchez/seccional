@@ -6,7 +6,7 @@ const socioSectional = document.getElementById('sectional')
 const pollingPlace = document.getElementById('polling-place')
 
 const limpiarCampos = () => {
-    socioName.innerHTML = `<b>Nombre:</b> Socio no encontrado`;
+    socioName.innerHTML = `<b>Nombre:</b> Persona no encontrada`;
     socioNumber.innerHTML = `<b>C.I N.°:</b>`;
     socioAddress.innerHTML = `<b>Dirección:</b>`;
     socioSectional.innerHTML = `<b>Seccional:</b>`;
@@ -25,7 +25,7 @@ form.addEventListener('submit', (e) => {
                 return res.json()
             } else if (res.status == 404) {
                 limpiarCampos();
-                throw `No existe el persona con la cédula ${ci}`
+                throw `No existe la persona con la cédula ${ci}`
             }
         })
         .then(data => {
